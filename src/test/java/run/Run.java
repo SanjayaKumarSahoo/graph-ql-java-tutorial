@@ -35,8 +35,8 @@ public class Run {
                 "  \t}\n" +
                 "  }\n" +
                 "}";
-        ExecutionResult executionResult = build.execute(query);
 
+        ExecutionResult executionResult = build.execute(query);
         System.out.println(executionResult.getData().toString());
 
 
