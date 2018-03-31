@@ -1,2 +1,2 @@
 # graph-ql-java-tutorial
-A sample application on java graph-ql query
+A sample application on java graph-ql query/mutation
