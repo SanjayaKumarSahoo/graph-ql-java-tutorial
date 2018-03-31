@@ -1,0 +1,23 @@
+schema {
+    query: QueryType
+}
+
+type QueryType {
+  allPersons: [Person]
+}
+
+
+type Person {
+    id : ID
+    name : String!
+    age : String!
+    posts: [Post]
+
+}
+
+
+type Post {
+    id : ID
+    title : String!
+    author : String!
+}
