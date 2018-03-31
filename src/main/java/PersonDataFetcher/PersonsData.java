@@ -1,6 +1,7 @@
 package PersonDataFetcher;
 
 import graphql.schema.DataFetcher;
+import graphql.schema.DataFetchingEnvironment;
 import model.Person;
 import model.Post;
 
@@ -11,13 +12,28 @@ import java.util.UUID;
 
 public class PersonsData {
 
+    private static List<Person> personList = new ArrayList<>();
+
+
     public static DataFetcher<List<Person>> getAllPersons() {
         return (environment) -> getAllPersonsData();
     }
 
-    private static List<Person> getAllPersonsData() {
+    public static DataFetcher<Person> savePersons() {
+        return (environment) -> savePersonData(environment);
+    }
 
-        List<Person> personList = new ArrayList<>();
+    private static Person savePersonData(DataFetchingEnvironment environment) {
+        Person person = new Person();
+        person.setId(UUID.randomUUID().toString());
+        person.setAge(environment.getArgument("age"));
+        person.setName(environment.getArgument("name"));
+        personList.add(person);
+        return person;
+    }
+
+
+    private static List<Person> getAllPersonsData() {
 
         Person person = new Person();
         person.setId(UUID.randomUUID().toString());

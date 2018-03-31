@@ -1,5 +1,11 @@
 schema {
     query: QueryType
+    mutation: Mutation
+
+}
+
+type Mutation {
+  savePerson(name: String!, age: Int!): Person
 }
 
 type QueryType {
