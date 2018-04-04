@@ -14,7 +14,7 @@ A sample application demonstrating graph-ql java for query and mutation use case
     
 ```
    mutation {
-     savePerson(name: "Sanjaya", age: 45, posts: [{title: "Rich dad poor dad"}, {title: "how to influence people"}]) {
+     savePerson(name: "Bob", age: 25, posts: [{title: "Rich dad poor dad"}, {title: "how to influence people"}]) {
        age
        name
        posts {
