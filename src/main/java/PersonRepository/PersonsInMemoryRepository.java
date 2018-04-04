@@ -5,18 +5,17 @@ import model.Person;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PersonsRepository {
-
+public class PersonsInMemoryRepository {
 
     private static final List<Person> personList = new ArrayList<>();
-
 
     public List<Person> allPersons() {
         return personList;
     }
 
-    public void savePerson(Person person) {
+    public Person savePerson(Person person) {
         personList.add(person);
+        return person;
     }
 
 }

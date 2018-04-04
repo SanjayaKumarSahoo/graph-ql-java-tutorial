@@ -4,14 +4,14 @@ schema {
 
 }
 
-type Mutation {
-  savePerson(name: String!, age: Int!): Person
-}
 
 type QueryType {
   allPersons: [Person]
 }
 
+type Mutation {
+  savePerson(name: String!, age: Int!, posts: [PostInput]): Person
+}
 
 type Person {
     id : ID
@@ -25,5 +25,8 @@ type Person {
 type Post {
     id : ID
     title : String!
-    author : String!
+}
+
+input PostInput {
+    title : String!
 }
